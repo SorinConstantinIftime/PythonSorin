@@ -11,8 +11,8 @@
 # for i in "Ana are mere":
 #     pass
 # print(i)
-
 lista = [1, 2, 3]
+
 for Sorin in "Ana are mere":
     pass
 print(Sorin, 'temporar')
