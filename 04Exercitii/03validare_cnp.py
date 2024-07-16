@@ -28,7 +28,8 @@ print("Luna nastere: " + luna_nastere)
 print('Zi nastere: ', zi_nastere)
 print('Judet: ' + judet)
 print('NNN: ' + NNN_interval)
-if sex in ('1', '2') and int(luna_nastere) in luni_interval and int(zi_nastere) in zile_interval and int(judet) in judet_interval and int(C_final) == int(Control):
+if (sex in ('1', '2') and int(luna_nastere) in luni_interval and int(zi_nastere) in zile_interval
+        and int(judet) in judet_interval and int(C_final) == int(Control)):
     print('CNP corect')
 else:
     print('CNP incorect')
