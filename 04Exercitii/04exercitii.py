@@ -74,25 +74,96 @@ element” - daca utilizatorul scrie de la tastaura 4 afisati “Sterere lista d
 - daca utilizatorul scrie de la tastaura 5 afisati “Adaugare element” - daca utilizatorul
 scrie altceva de la tastaura afisati “Alegerea nu exista. Reincercati”
 '''
-# cifra = int(input('introduceti numarul din meniu: '))
-# if cifra == 1:
+# cifra = input('introduceti numarul din meniu: ')
+# lista_cumparaturi = ['suc', 'apa']
+# if cifra == "1":
 #     print("Afisare lista de cumparaturi")
-# elif cifra ==2:
-#     print("Adaugare element")
-# elif cifra == 3:
-#     print("Stergere element")
-# elif cifra == 4:
+# elif cifra == "2":
+#     adaugare_element = input("Adaugare element: ")
+#     lista_cumparaturi.append(adaugare_element)
+#     print(lista_cumparaturi)
+# elif cifra == "3":
+#     print(lista_cumparaturi)
+#     stergere_element = input('Stergere element')
+#     if stergere_element in lista_cumparaturi:
+#         lista_cumparaturi.remove((stergere_element))
+#         print(lista_cumparaturi)
+# elif cifra == "4":
 #     print("Sterere lista de cumparaturi")
-# elif cifra == 5:
+#     lista_cumparaturi.clear()
+#     print(lista_cumparaturi)
+# elif cifra == "5":
 #     print("Cautare in lista de cumparaturi")
+#     cautare_element = input('Introdu un element: ')
+#     if cautare_element in lista_cumparaturi:
+#         print('Elementul exista')
+#     else:
+#         print('Elementul nu exista')
+#
 # else:
 #     print("Alegerea nu exista. Reincercati")
-#####################################################
+# #####################################################
 
-variabila_a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-variabila_b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-variabila_comuna = []
-for numar in variabila_a:
-  if numar in variabila_b and numar not in variabila_comuna:
-    variabila_comuna.append(numar)
-print(variabila_comuna)
+# variabila_a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+# variabila_b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# variabila_comuna = []
+# for numar in variabila_a:
+#   if numar in variabila_b and numar not in variabila_comuna:
+#     variabila_comuna.append(numar)
+# print(variabila_comuna)
+
+# variabila_a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+# variabila_b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# variabila_comuna = []
+#
+# for i in variabila_a:
+#     if i in variabila_b:
+#         variabila_comuna.append(i)
+# print(variabila_comuna)
+
+# variabila_a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+# variabila_b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+#
+# # print(set(variabila_a).intersection(set(variabila_b)))
+# print(list(set(variabila_a).intersection(set(variabila_b))))
+
+#############################
+# TOP FILME
+
+lista_filme = [
+    {
+        'nume': 'George',
+        'filme': ['a', 'b', 'c']
+    },
+    {
+        'nume': 'Cristian',
+        'filme': ['b', 'c', 'd', 'e', 'a']
+
+    },
+    {
+        'nume': 'Stefan',
+        'filme': ['c', 'a', 'a']
+    }
+]
+filme_vizionate = {}
+
+cel_mai_vizionat_film = []
+numar_vizionari = 0
+for utilizator in lista_filme:
+    for film in utilizator['filme']:
+        if film in filme_vizionate:
+            filme_vizionate[film] = filme_vizionate[film] + 1
+            #filme_vizionate += 1
+        else:
+            filme_vizionate[film] = 1
+        if numar_vizionari < filme_vizionate[film]:
+            numar_vizionari = filme_vizionate[film]
+            if film not in cel_mai_vizionat_film:
+                cel_mai_vizionat_film.append(film)
+            for i in cel_mai_vizionat_film:
+                if filme_vizionate[i] < numar_vizionari:
+                    cel_mai_vizionat_film.remove(i)
+                print(i)
+print(filme_vizionate)
+print(numar_vizionari)
+print('cel_mai_vizionat_film', cel_mai_vizionat_film)
