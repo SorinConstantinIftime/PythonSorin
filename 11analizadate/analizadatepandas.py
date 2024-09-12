@@ -206,3 +206,8 @@ print(df_concatenat)
 
 # df_concatenat.to_csv('nou.csv', index=False)
 df_concatenat.to_csv('nou.csv')
+
+df_suma_zilnica = suma_zilnica.reset_index()
+df_suma_zilnica.columns = ['Data_Transactie', 'Suma_Totala']
+
+df_suma_zilnica.to_csv('Date_tranzactii.csv')
