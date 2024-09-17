@@ -33,6 +33,8 @@ print(suma_lunara)
 suma_zilnica = df_financial.groupby(df_financial['Data_Transactie'].dt.date)['Suma_Transactie'].sum()
 suma_zilnica = suma_zilnica.sort_index()
 print(suma_zilnica)
+suma_zilnica = suma_zilnica.sort_values()
+print(suma_zilnica)
 
 
 
